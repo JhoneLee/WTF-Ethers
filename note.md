@@ -17,3 +17,4 @@
    ```
 * 通过[订阅合约的事件](https://github.com/JhoneLee/WTF-Ethers/blob/main/07_Event/readme.md)，来更新自己的界面反馈最新的用户数据
 * 事件数据太多，还可以[过滤自己想要看的事件日志](https://github.com/JhoneLee/WTF-Ethers/blob/main/09_EventFilter/readme.md)
+* 用ethers.js [生成自己的助记词和钱包](https://github.com/JhoneLee/WTF-Ethers/tree/main/14_HDwallet)，并且可以把钱包搞成加密json，解密json后得到钱包的信息
