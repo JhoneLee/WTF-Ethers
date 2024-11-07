@@ -70,7 +70,7 @@ tags:
     const wallet = new ethers.Wallet(privateKey, provider)
     ```
 
-2. 创建`DAI`合约对象，注意，这里生成合约时要用`provider`而不是`wallet`，不然则不能更改`staticCall`方法中的`from`（可能是bug，也可能是feature）。
+2. 创建`DAI`合约对象，注意，这里生成合约时要用`provider`而不是`wallet`，不然则不能更改`staticCall`方法中的`from` ~~（可能是bug，也可能是feature）~~ 因为你用wallet创建的合约已经包含了自身的账户信息，而用provider创建的没有，所以才能通过from 去模拟其他用户。
 
     ```js
     // DAI的ABI
