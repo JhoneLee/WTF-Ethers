@@ -32,7 +32,7 @@ tags:
 
 通过[ERC165标准](https://eips.ethereum.org/EIPS/eip-165)，智能合约可以声明它支持的接口，供其他合约检查。因此，我们可以通过`ERC165`来检查一个智能合约是不是支持了`ERC721`的接口。
 
-`IERC165`接口合约只声明了一个`supportsInterface`函数，输入要查询的`interfaceId`接口id（类型为`bytes4`），若合约实现了该接口id，则返回`true`；反之，则返回`false`：
+`IERC165`接口合约只声明了一个`supportsInterface`函数，输入要查询的`interfaceId`接口id（类型为`bytes4`），若合约实现了该接口id，则返回`true`；反之，则返回`false`（这些接口id标识符可以在相关的标准文档或源码中查到。一般来说，大多数流行标准的接口标识符是公开的，你可以直接在互联网上找到它们。例如，ERC-20 和 ERC-721 标识符就已经被广泛使用和记录）：
 
 ```solidity
 interface IERC165 {
