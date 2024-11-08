@@ -5,7 +5,7 @@
 * 校验对方的合约是否符合它声称所支持的规范，用[基于ERC160的supportsInterface检测](https://github.com/JhoneLee/WTF-Ethers/blob/main/12_ERC721Check/readme.md)
 * 只读合约用provider 读写合约用wallet
 * 自己的代币想设置最小单位 以及相关的运算用 [units系列工具函数](https://github.com/JhoneLee/WTF-Ethers/blob/main/10_Units/readme.md)
-* 进行货币交易的Transfer 要等待交易完成在进行后续操作 await tx.wait()
+* 进行货币交易的Transfer 要等待交易完成在进行后续操作 await tx.wait(), [有多笔转账可以一次性完成](https://github.com/JhoneLee/WTF-Ethers/blob/main/15_MultiTransfer/MultiTransfer.js)，节约Gas费
 * 部署合约需要自己写js脚本，合约verify的时候要注意构造函数有参数的要把参数带上
    ```js
    // 假如我的构造函数里面有数值
