@@ -5,7 +5,24 @@
 * 校验对方的合约是否符合它声称所支持的规范，用[基于ERC160的supportsInterface检测](https://github.com/JhoneLee/WTF-Ethers/blob/main/12_ERC721Check/readme.md)
 * 只读合约用provider 读写合约用wallet
 * 自己的代币想设置最小单位 以及相关的运算用 [units系列工具函数](https://github.com/JhoneLee/WTF-Ethers/blob/main/10_Units/readme.md)
-* 进行货币交易的Transfer 要等待交易完成在进行后续操作 await tx.wait(), [有多笔转账可以一次性完成](https://github.com/JhoneLee/WTF-Ethers/blob/main/15_MultiTransfer/MultiTransfer.js)，节约Gas费
+* 涉及进行货币交易的合约 Transfer方法要等待交易完成在进行后续操作 await tx.wait(), 钱包的转账 sendTransaction方法也一样
+* [有多笔**合约转账**可以利用 Airdrop 合约一次性完成](https://github.com/JhoneLee/WTF-Ethers/blob/main/15_MultiTransfer/MultiTransfer.js)，节约Gas费
+* ETH 是以太坊网络的原生代币，直接用于支付交易费用和转账；WETH 是 ERC-20 版本的 ETH，用于与 ERC-20 代币和智能合约交互， 所以一个钱包地址的资产，需要分别查看eth余额和weth余额, **互相转换要收取gas费**
+   ```js
+   console.log("\n3. 读取一个地址的ETH和WETH余额")
+   //读取WETH余额
+   const balanceWETH = await contractWETH.balanceOf(wallets[19])
+   console.log(`WETH持仓: ${ethers.formatEther(balanceWETH)}`)
+   //读取ETH余额
+   const balanceETH = await provider.getBalance(wallets[19])
+   console.log(`ETH持仓: ${ethers.formatEther(balanceETH)}\n`)
+   // eth转换weth
+   const txWeth = await contractWETH.deposit({
+    value: ethers.parseEther('0.001'),
+  });
+   // weth 转换eth
+   const txEth = await contractWETH.withdraw(ethers.parseEther('0.001'));
+   ```
 * 部署合约需要自己写js脚本，合约verify的时候要注意构造函数有参数的要把参数带上
    ```js
    // 假如我的构造函数里面有数值
@@ -18,3 +35,5 @@
 * 通过[订阅合约的事件](https://github.com/JhoneLee/WTF-Ethers/blob/main/07_Event/readme.md)，来更新自己的界面反馈最新的用户数据
 * 事件数据太多，还可以[过滤自己想要看的事件日志](https://github.com/JhoneLee/WTF-Ethers/blob/main/09_EventFilter/readme.md)
 * 用ethers.js [生成自己的助记词和钱包](https://github.com/JhoneLee/WTF-Ethers/tree/main/14_HDwallet)，并且可以把钱包搞成加密json，解密json后得到钱包的信息
+* [没有多个钱包、weth批量转账到一个账户方法，只能通过遍历](https://github.com/JhoneLee/WTF-Ethers/blob/main/16_MultiCollect/readme.md)，对每个钱包和WETH合约执行sendTransaction\ transfer , 还要预留gas费，不能一下全转完
+* 
