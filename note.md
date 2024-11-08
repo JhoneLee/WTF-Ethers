@@ -39,21 +39,21 @@
 * [Merkle Tree 默克尔树算法](https://github.com/JhoneLee/WTF-Ethers/blob/main/17_MerkleTree/readme.md)主要用来校验用户的地址时候有权限铸造NFT
 * hardhat 简化了合约的部署和编译，如果没有hardhat, 我们需要取到abi后用一下方法生成合约
   ```js
-  // 3. 创建合约工厂
-// NFT的abi
-const abiNFT = [
-    "constructor(string memory name, string memory symbol, bytes32 merkleroot)",
-    "function name() view returns (string)",
-    "function symbol() view returns (string)",
-    "function mint(address account, uint256 tokenId, bytes32[] calldata proof) external",
-    "function ownerOf(uint256) view returns (address)",
-    "function balanceOf(address) view returns (uint256)",
-];
-// 合约字节码，在remix中，你可以在两个地方找到Bytecode
-// i. 部署面板的Bytecode按钮
-// ii. 文件面板artifact文件夹下与合约同名的json文件中
-// 里面"object"字段对应的数据就是Bytecode，挺长的，608060起始
-// "object": "608060405260646000553480156100...
-const bytecodeNFT = contractJson.default.object;
-const factoryNFT = new ethers.ContractFactory(abiNFT, bytecodeNFT, wallet);
+   // 3. 创建合约工厂
+   // NFT的abi
+   const abiNFT = [
+       "constructor(string memory name, string memory symbol, bytes32 merkleroot)",
+       "function name() view returns (string)",
+       "function symbol() view returns (string)",
+       "function mint(address account, uint256 tokenId, bytes32[] calldata proof) external",
+       "function ownerOf(uint256) view returns (address)",
+       "function balanceOf(address) view returns (uint256)",
+   ];
+   // 合约字节码，在remix中，你可以在两个地方找到Bytecode
+   // i. 部署面板的Bytecode按钮
+   // ii. 文件面板artifact文件夹下与合约同名的json文件中
+   // 里面"object"字段对应的数据就是Bytecode，挺长的，608060起始
+   // "object": "608060405260646000553480156100...
+   const bytecodeNFT = contractJson.default.object;
+   const factoryNFT = new ethers.ContractFactory(abiNFT, bytecodeNFT, wallet);
   ```
