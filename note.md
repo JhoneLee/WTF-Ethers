@@ -56,4 +56,5 @@
    // "object": "608060405260646000553480156100...
    const bytecodeNFT = contractJson.default.object;
    const factoryNFT = new ethers.ContractFactory(abiNFT, bytecodeNFT, wallet);
+   const contractNFT = await factoryNFT.deploy("WTF Merkle Tree", "WTF", root)
   ```
