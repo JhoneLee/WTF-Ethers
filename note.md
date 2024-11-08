@@ -37,3 +37,23 @@
 * 用ethers.js [生成自己的助记词和钱包](https://github.com/JhoneLee/WTF-Ethers/tree/main/14_HDwallet)，并且可以把钱包搞成加密json，解密json后得到钱包的信息
 * [没有多个钱包、weth批量转账到一个账户方法，只能通过遍历](https://github.com/JhoneLee/WTF-Ethers/blob/main/16_MultiCollect/readme.md)，对每个钱包和WETH合约执行sendTransaction\ transfer , 还要预留gas费，不能一下全转完
 * [Merkle Tree 默克尔树算法](https://github.com/JhoneLee/WTF-Ethers/blob/main/17_MerkleTree/readme.md)主要用来校验用户的地址时候有权限铸造NFT
+* hardhat 简化了合约的部署和编译，如果没有hardhat, 我们需要取到abi后用一下方法生成合约
+  ```js
+  // 3. 创建合约工厂
+// NFT的abi
+const abiNFT = [
+    "constructor(string memory name, string memory symbol, bytes32 merkleroot)",
+    "function name() view returns (string)",
+    "function symbol() view returns (string)",
+    "function mint(address account, uint256 tokenId, bytes32[] calldata proof) external",
+    "function ownerOf(uint256) view returns (address)",
+    "function balanceOf(address) view returns (uint256)",
+];
+// 合约字节码，在remix中，你可以在两个地方找到Bytecode
+// i. 部署面板的Bytecode按钮
+// ii. 文件面板artifact文件夹下与合约同名的json文件中
+// 里面"object"字段对应的数据就是Bytecode，挺长的，608060起始
+// "object": "608060405260646000553480156100...
+const bytecodeNFT = contractJson.default.object;
+const factoryNFT = new ethers.ContractFactory(abiNFT, bytecodeNFT, wallet);
+  ```
