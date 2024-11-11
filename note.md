@@ -1,6 +1,6 @@
 # 要点记录
 
-* 不能生成实例的合约，要用[Interface 类](https://github.com/JhoneLee/WTF-Ethers/tree/main/13_EncodeCalldata)去 calldata
+* 不能生成实例的合约，要用[Interface 类](https://github.com/JhoneLee/WTF-Ethers/tree/main/13_EncodeCalldata)去 calldata， 除此之外[Interface类还可以解码交易信息](https://github.com/JhoneLee/WTF-Ethers/blob/main/20_DecodeTx/img/20-3.png)
 * 发送交易前为了防止浪费gas费，需要预执行一次交易判断是否可达，用[staticCall](https://github.com/JhoneLee/WTF-Ethers/blob/main/11_StaticCall/readme.md)
 * 校验对方的合约是否符合它声称所支持的规范，用[基于ERC160的supportsInterface检测](https://github.com/JhoneLee/WTF-Ethers/blob/main/12_ERC721Check/readme.md)
 * 只读合约用provider 读写合约用wallet
