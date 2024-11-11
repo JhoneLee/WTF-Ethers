@@ -4,6 +4,7 @@
 * 发送交易前为了防止浪费gas费，需要预执行一次交易判断是否可达，用[staticCall](https://github.com/JhoneLee/WTF-Ethers/blob/main/11_StaticCall/readme.md)
 * 校验对方的合约是否符合它声称所支持的规范，用[基于ERC160的supportsInterface检测](https://github.com/JhoneLee/WTF-Ethers/blob/main/12_ERC721Check/readme.md)
 * 只读合约用provider 读写合约用wallet
+* 可以[监听交易池](https://github.com/JhoneLee/WTF-Ethers/blob/main/19_Mempool/readme.md)，查看pending的全部交易的 to gas费率 滑点等等
 * 自己的代币想设置最小单位 以及相关的运算用 [units系列工具函数](https://github.com/JhoneLee/WTF-Ethers/blob/main/10_Units/readme.md)
 * 涉及进行货币交易的合约 Transfer方法要等待交易完成在进行后续操作 await tx.wait(), 钱包的转账 sendTransaction方法也一样
 * [有多笔**合约转账**可以利用 Airdrop 合约一次性完成](https://github.com/JhoneLee/WTF-Ethers/blob/main/15_MultiTransfer/MultiTransfer.js)，节约Gas费
