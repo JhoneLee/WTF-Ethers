@@ -36,6 +36,8 @@ tags:
 2. **不可否认**：发送方不能否认发送过这个消息。
 3. **完整性**：消息在传输过程中无法被修改。
 
+**本教程示例通过 用自己的钱包部署NTF合约之后，向目标账户颁发 包含账户、tokenId的数字签名， 目标用户再传入自己的 账户、tokenId 以及合约颁发给自己的数字签名后，实现自主铸造NFT**
+
 ## 数字签名合约简述
 
 [WTF Solidity极简教程第37讲：数字签名](https://github.com/AmazingAng/WTF-Solidity/blob/main/37_Signature/readme.md)中的`SignatureNFT`合约利用`ECDSA`验证白名单铸造`NFT`。我们讲下两个重要的函数：
