@@ -2,7 +2,7 @@
 
 * 不能生成实例的合约，要用[Interface 类](https://github.com/JhoneLee/WTF-Ethers/tree/main/13_EncodeCalldata)去 calldata， 除此之外[Interface类还可以解码交易信息](https://github.com/JhoneLee/WTF-Ethers/blob/main/20_DecodeTx/img/20-3.png)
 * 发送交易前为了防止浪费gas费，需要预执行一次交易判断是否可达，用[staticCall](https://github.com/JhoneLee/WTF-Ethers/blob/main/11_StaticCall/readme.md)
-* 校验对方的合约是否符合它声称所支持的规范，用[基于ERC160的supportsInterface检测](https://github.com/JhoneLee/WTF-Ethers/blob/main/12_ERC721Check/readme.md)
+* 校验对方的合约是否符合它声称所支持的规范，用[基于ERC165的supportsInterface检测](https://github.com/JhoneLee/WTF-Ethers/blob/main/12_ERC721Check/readme.md)  ERC20因为出现的早所以不能用上面的方法检测，[推荐方式如下](https://github.com/JhoneLee/WTF-Ethers/blob/main/24_ERC20Check/readme.md) 用于搞链上分析和识别貔貅
 * 只读合约用provider 读写合约用wallet
 * 可以[监听交易池](https://github.com/JhoneLee/WTF-Ethers/blob/main/19_Mempool/readme.md)，查看pending的全部交易的 to gas费率 滑点等等， 但是由于交易订单巨量但免费节点的请求数量有限，这个东西知道就行
 * 自己的代币想设置最小单位 以及相关的运算用 [units系列工具函数](https://github.com/JhoneLee/WTF-Ethers/blob/main/10_Units/readme.md)
