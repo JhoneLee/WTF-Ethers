@@ -37,7 +37,7 @@
 * 事件数据太多，还可以[过滤自己想要看的事件日志](https://github.com/JhoneLee/WTF-Ethers/blob/main/09_EventFilter/readme.md)
 * 用ethers.js [生成自己的助记词和钱包](https://github.com/JhoneLee/WTF-Ethers/tree/main/14_HDwallet)，并且可以把钱包搞成加密json，解密json后得到钱包的信息
 * [没有多个钱包、weth批量转账到一个账户方法，只能通过遍历](https://github.com/JhoneLee/WTF-Ethers/blob/main/16_MultiCollect/readme.md)，对每个钱包和WETH合约执行sendTransaction\ transfer , 还要预留gas费，不能一下全转完
-* [Merkle Tree 默克尔树算法生成用户白名单](https://github.com/JhoneLee/WTF-Ethers/blob/main/17_MerkleTree/readme.md)主要用来校验用户的地址时候有权限铸造NFT， 同时还有[数字签名白名单法](https://github.com/JhoneLee/WTF-Ethers/blob/main/18_Signature/readme.md)也可以提供用户白名单鉴权
+* [Merkle Tree 默克尔树算法生成用户白名单](https://github.com/JhoneLee/WTF-Ethers/blob/main/17_MerkleTree/readme.md)主要用来校验用户的地址时候有权限铸造NFT， 同时还有[数字签名白名单法](https://github.com/JhoneLee/WTF-Ethers/blob/main/18_Signature/readme.md)也可以提供用户白名单鉴权； 数字签名还可以对复杂的数据类型进行签名 [EIP721](https://github.com/JhoneLee/WTF-Ethers/blob/main/26_EIP712/readme.md)
 * hardhat 简化了合约的部署和编译，如果没有hardhat, 我们需要取到abi后用一下方法生成合约
   ```js
    // 3. 创建合约工厂
