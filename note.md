@@ -60,3 +60,4 @@
    const contractNFT = await factoryNFT.deploy("WTF Merkle Tree", "WTF", root)
   ```
 * 钱包地址[可以搞成靓号](https://github.com/JhoneLee/WTF-Ethers/blob/main/21_VanityAddress/readme.md) 但是靓号也没多靓，有点鸡肋这个东西
+* 智能合约在以太坊中是公开透明的，不要写私密数据到智能合约中，任何人都可以[解析智能合约数据](https://github.com/JhoneLee/WTF-Ethers/blob/main/22_ReadAnyData/readme.md)
