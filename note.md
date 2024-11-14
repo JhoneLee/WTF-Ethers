@@ -33,7 +33,7 @@
    ```sh
    hardhat verify --network sepolia 0x72140Ec4BBEFE2A546A1eEcC7A30Efca4B2D967b  --constructor-args tokenArgs.js
    ```
-* 通过[订阅合约的事件](https://github.com/JhoneLee/WTF-Ethers/blob/main/07_Event/readme.md)，来更新自己的界面反馈最新的用户数据
+* 通过[订阅全局合约的事件](https://github.com/JhoneLee/WTF-Ethers/blob/main/07_Event/readme.md)或者[当前调用合约的事件](https://github.com/JhoneLee/WTF-Ethers/blob/main/08_ContractListener/readme.md)，来更新自己的界面反馈最新的用户数据
 * 事件数据太多，还可以[过滤自己想要看的事件日志](https://github.com/JhoneLee/WTF-Ethers/blob/main/09_EventFilter/readme.md)
 * 用ethers.js [生成自己的助记词和钱包](https://github.com/JhoneLee/WTF-Ethers/tree/main/14_HDwallet)，并且可以把钱包搞成加密json，解密json后得到钱包的信息
 * [没有多个钱包、weth批量转账到一个账户方法，只能通过遍历](https://github.com/JhoneLee/WTF-Ethers/blob/main/16_MultiCollect/readme.md)，对每个钱包和WETH合约执行sendTransaction\ transfer , 还要预留gas费，不能一下全转完
